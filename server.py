@@ -1,4 +1,5 @@
 #!/usr/bin/env python
+import os
 import cv2
 import json
 import numpy as np
@@ -40,5 +41,5 @@ def upload_file():
 
 if __name__ == '__main__':
 
-    # Run the flask app
-    app.run()
+    port = int(os.environ.get('PORT', 5000))
+    app.run(app, host = '0.0.0.0', port = port, debug = True)
