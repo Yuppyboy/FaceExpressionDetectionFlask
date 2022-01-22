@@ -5,8 +5,7 @@ from keras.models import model_from_json
 class VideoCamera(object):
     def __init__(self):
         self.video = cv2.VideoCapture(0)
-        # self.face_detector = cv2.CascadeClassifier(cv2.data.haarcascades + "haarcascade_frontalface_default.xml")
-        self.face_detector = cv2.CascadeClassifier(f'{cv2.haarcascades}haarcascade_frontalface_default.xml')
+        self.face_detector = cv2.CascadeClassifier(cv2.data.haarcascades + "haarcascade_frontalface_default.xml")
         self.model = model_from_json(open("ml_folder/facial_expression_model_structure.json", "r").read())
         self.model.load_weights('ml_folder/facial_expression_model_weights.h5')
     

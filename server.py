@@ -12,7 +12,7 @@ app = Flask(__name__)
 app.config['SEND_FILE_MAX_AGE_DEFAULT'] = 0
 
 # Load Haarcascade File
-face_detector = cv2.CascadeClassifier("ml_folder/haarcascade_frontalface_default.xml")
+face_detector = cv2.CascadeClassifier(cv2.data.haarcascades + "haarcascade_frontalface_default.xml")
 
 # Load the Model and Weights
 model = model_from_json(open("ml_folder/facial_expression_model_structure.json", "r").read())
