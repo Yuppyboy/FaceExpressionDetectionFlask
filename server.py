@@ -17,7 +17,7 @@ face_detector = cv2.CascadeClassifier("ml_folder/haarcascade_frontalface_default
 # Load the Model and Weights
 model = model_from_json(open("ml_folder/facial_expression_model_structure.json", "r").read())
 model.load_weights('ml_folder/facial_expression_model_weights.h5')
-model._make_predict_function()
+# model._make_predict_function()
 
 
 @app.route('/')
