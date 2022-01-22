@@ -3,6 +3,4 @@ imutils
 Keras
 numpy
 opencv-python
-scipy
-tensorflow
 gunicorn
