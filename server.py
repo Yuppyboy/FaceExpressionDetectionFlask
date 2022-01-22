@@ -17,7 +17,6 @@ face_detector = cv2.CascadeClassifier("ml_folder/haarcascade_frontalface_default
 # Load the Model and Weights
 model = model_from_json(open("ml_folder/facial_expression_model_structure.json", "r").read())
 model.load_weights('ml_folder/facial_expression_model_weights.h5')
-# model._make_predict_function()
 
 
 @app.route('/')
@@ -28,9 +27,6 @@ def index():
 @app.route('/uploade', methods=['POST', 'GET'])
 def upload_file():
     if request.method == 'POST':
-        # f.save("somefile.jpeg")
-        # f = request.files['file']
-
         f = request.files['file'].read()
         npimg = np.fromstring(f, np.uint8)
         img = cv2.imdecode(npimg, cv2.IMREAD_GRAYSCALE)
