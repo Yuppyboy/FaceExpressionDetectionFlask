@@ -109,23 +109,3 @@ h2 > a:hover {
 #container2 > #analytics > p:last-child {
   margin-bottom: 10px;
 }
-
-#graph-parent {
-  border: 4px solid #333;
-  border-radius: 10px;
-  margin-bottom: 10px;
-}
-
-#graph-parent > h3 {
-  padding-left: 15px;
-  text-decoration: underline;
-}
-
-#graph {
-  width: 750px;
-  height: 650px;
-}
-
-#graph > svg {
-  padding-left: 20px;
-}
