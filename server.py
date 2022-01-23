@@ -9,7 +9,14 @@ from keras.models import model_from_json
 app = Flask(__name__)
 app.config['SEND_FILE_MAX_AGE_DEFAULT'] = 0
 
+<<<<<<< HEAD
 face_detector = cv2.CascadeClassifier(cv2.data.haarcascades + "haarcascade_frontalface_default.xml")
+=======
+# Load Haarcascade File
+face_detector = cv2.CascadeClassifier("ml_folder/haarcascade_frontalface_default.xml")
+
+# Load the Model and Weights
+>>>>>>> parent of c875039 (m)
 model = model_from_json(open("ml_folder/facial_expression_model_structure.json", "r").read())
 model.load_weights('ml_folder/facial_expression_model_weights.h5')
 
