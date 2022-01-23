@@ -1,3 +1,4 @@
+
 import cv2
 import numpy as np
 from keras.preprocessing import image as im
@@ -38,8 +39,11 @@ def classify(frame, face_detector, model):
             detect['height'] = str(h)
 
             face_prop.append(detect)
+            print(face_prop)
             
-            cv2.putText(frame, label, (int(x), int(y)), cv2.FONT_HERSHEY_SIMPLEX, 1, (255, 255, 255), 2)
+            cv2.putText(frame, label + " : " + str(confidence), (int(x), int(y)), cv2.FONT_HERSHEY_SIMPLEX, 1, (255, 255, 255), 2)
+        
+    cv2.imwrite("somefile.jpeg", frame)
 
     return face_prop
 
