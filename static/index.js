@@ -88,12 +88,6 @@ function updateAnalytics() {
   });
 }
 
-function clearGraph() {
-  const div = document.getElementById("graph");
-  while (div.firstChild) {
-    div.removeChild(div.firstChild);
-  }
-}
 
 function stopInterval() {
   clearInterval(timeInterval);
